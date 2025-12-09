@@ -1,3 +1,28 @@
+## From 4.x to 5.x
+
+Upgrading from v4.x to v5.x should be seamless for most users. If you were already using the recommended async/Promise pattern with `binarySettings`, no code changes are required.
+
+### Breaking Changes
+
+The following deprecated APIs have been removed:
+
+| Removed | Replacement |
+|---------|-------------|
+| `resolutionMode: 'CALLBACK'` | Use async/Promise (default) |
+| `resolutionMode: 'CONTEXT'` | Use async/Promise (default) |
+| `binaryMimeTypes` option | Use `binarySettings` instead |
+| `createServer()` export | Use `serverlessExpress({ app })` |
+| `proxy()` export | Use `serverlessExpress({ app })` |
+| `handler.handler()` | Use `serverlessExpress({ app })` |
+| `handler.proxy()` | Use `serverlessExpress({ app })` |
+| Callback parameter in handler | Use async/Promise |
+
+### Node.js Version
+
+v5.x officially supports Node.js 24+, aligning with AWS Lambda's latest runtime. Earlier Node.js versions may still work but are not officially supported.
+
+---
+
 ## From 3.x to 4.x
 
 ### Lambda Handler
